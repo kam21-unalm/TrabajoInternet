@@ -1,0 +1,108 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #283593;  /* Azul elegante */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+section {
+    margin: 40px 0;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #283593;  /* Color complementario */
+}
+
+section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.selector {
+    text-align: center;
+}
+
+.selector select {
+    padding: 10px;
+    font-size: 1.1em;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 200px;
+}
+
+.selector button {
+    padding: 12px 20px;
+    background-color: #283593;  /* Azul elegante */
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selector button:hover {
+    background-color: #1c276b;  /* Tonalidad más oscura del azul */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilo para la tabla de planes */
+#tablaPlanes table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tablaPlanes th, #tablaPlanes td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#tablaPlanes th {
+    background-color: #f4f4f4;
+    color: #283593;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #283593;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px 10px 0 0;
+}
+
