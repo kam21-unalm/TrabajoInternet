@@ -1,12 +1,12 @@
 import pandas as pd
 
-# Ruta al archivo Excel del INEI
-ruta_inei = "data/Anexo Estadístico.xlsx"
+# Ruta al archivo Excel
+ruta_excel = "data/Anexo Estadístico.xlsx"
 
-# Leer desde la fila 6 para saltar encabezados innecesarios
-df = pd.read_excel(ruta_inei, sheet_name="A3.16", skiprows=6)
+# Cargar hoja A3.16 desde fila 6
+df = pd.read_excel(ruta_excel, sheet_name="A3.16", skiprows=6)
 
-# Renombrar columnas claves para trabajar mejor
+# Renombrar columnas importantes
 df = df.rename(columns={
     "Unnamed: 2": "PROVINCIA",
     "Unnamed: 3": "DISTRITO",
@@ -14,16 +14,17 @@ df = df.rename(columns={
     "Unnamed: 6": "POBREZA_SUPERIOR"
 })
 
-# Filtrar solo la provincia Lima
+# Filtrar solo registros de la provincia de LIMA
 df_lima = df[df["PROVINCIA"] == "LIMA"].dropna(subset=["DISTRITO"])
 
-# Calcular pobreza promedio
+# Calcular el promedio entre límite inferior y superior
 df_lima["POBREZA"] = (df_lima["POBREZA_INFERIOR"] + df_lima["POBREZA_SUPERIOR"]) / 2
 
-# Seleccionar solo columnas finales
-df_final = df_lima[["DISTRITO", "POBREZA"]].copy()
+# Dejar solo distrito y pobreza
+df_resultado = df_lima[["DISTRITO", "POBREZA"]]
 
-# Guardar archivo limpio
-df_final.to_csv("processed_data/pobreza_lima.csv", index=False, encoding="utf-8")
+# Guardar CSV limpio
+ruta_salida = "processed_data/pobreza_lima.csv"
+df_resultado.to_csv(ruta_salida, index=False, encoding="utf-8")
 
 print("✅ Archivo 'pobreza_lima.csv' generado correctamente.")
