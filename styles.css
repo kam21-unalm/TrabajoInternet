@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7fb;
+    background-color: #f4f7fb;  /* Fondo claro y suave */
     color: #333;
 }
 
@@ -16,6 +16,7 @@ body {
     margin: 0 auto;
 }
 
+/* Estilos del encabezado */
 header {
     background-color: #283593;  /* Azul elegante */
     color: white;
@@ -25,28 +26,29 @@ header {
 
 header h1 {
     font-size: 2.5em;
-    margin-bottom: 10px;
 }
 
-section {
-    margin: 40px 0;
-    padding: 30px;
+/* Sección de distritos */
+#distritos {
+    padding: 20px;
     background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-section h2 {
+#distritos h2 {
     font-size: 1.8em;
     margin-bottom: 20px;
-    color: #283593;  /* Color complementario */
+    color: #283593;
 }
 
-section p {
+#distritos p {
     font-size: 1.2em;
     margin-bottom: 20px;
 }
 
+/* Estilos para el selector de distrito */
 .selector {
     text-align: center;
 }
@@ -74,10 +76,6 @@ section p {
     background-color: #1c276b;  /* Tonalidad más oscura del azul */
 }
 
-.hidden {
-    display: none;
-}
-
 /* Estilo para la tabla de planes */
 #tablaPlanes table {
     width: 100%;
@@ -96,7 +94,7 @@ section p {
     color: #283593;
 }
 
-/* Estilos del pie de página */
+/* Estilo para el pie de página */
 footer {
     background-color: #283593;
     color: white;

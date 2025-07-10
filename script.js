@@ -45,3 +45,4 @@ function mostrarPlanes() {
     tablaPlanes.innerHTML = contenido;
     planesSection.classList.remove("hidden");
 }
+
