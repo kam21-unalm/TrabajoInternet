@@ -5,102 +5,152 @@
     box-sizing: border-box;
 }
 
+/* Fuente profesional de Google Fonts */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fb;  /* Fondo claro y suave */
+    font-family: 'Roboto', sans-serif;
+    background-color: #F8E8E8; /* Fondo pastel suave (rosado claro) */
     color: #333;
+    min-height: 100vh;
 }
 
+/* Contenedor general */
 .container {
     width: 80%;
     margin: 0 auto;
 }
 
-/* Estilos del encabezado */
+/* Encabezado */
 header {
-    background-color: #283593;  /* Azul elegante */
+    background-color: #2C3E50; /* Fondo oscuro para contraste */
     color: white;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
+    border-bottom: 4px solid #16A085;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em;
+    letter-spacing: 2px;
 }
 
-/* Sección de distritos */
-#distritos {
-    padding: 20px;
-    background-color: white;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#distritos h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    color: #283593;
-}
-
-#distritos p {
+header p {
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-/* Estilos para el selector de distrito */
-.selector {
+/* Sección de información */
+#informacion {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.selector select {
-    padding: 10px;
-    font-size: 1.1em;
-    margin: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 200px;
+#informacion ul {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-.selector button {
-    padding: 12px 20px;
-    background-color: #283593;  /* Azul elegante */
-    color: white;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
+/* Estilo para la comparación de marcas */
+#comparacion {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.comparacion-boton {
+    margin-top: 20px;
+}
+
+/* Estilo para las tarjetas */
+.centrado {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 10px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
 }
 
-.selector button:hover {
-    background-color: #1c276b;  /* Tonalidad más oscura del azul */
+/* Efecto al pasar el ratón */
+.tarjeta:hover {
+    transform: scale(1.05);
 }
 
-/* Estilo para la tabla de planes */
-#tablaPlanes table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Colores para cada marca */
+.claro {
+    border-left: 10px solid #e60000; /* Rojo Claro */
+    background-color: #FDE8E8;
 }
 
-#tablaPlanes th, #tablaPlanes td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
+.movistar {
+    border-left: 10px solid #0a82ff; /* Azul Movistar */
+    background-color: #E8F4FF;
 }
 
-#tablaPlanes th {
-    background-color: #f4f4f4;
-    color: #283593;
+.wow {
+    border-left: 10px solid #ff7f00; /* Naranja Wow */
+    background-color: #FFF0E0;
 }
 
-/* Estilo para el pie de página */
-footer {
-    background-color: #283593;
-    color: white;
-    text-align: center;
+.win {
+    border-left: 10px solid #00bfae; /* Verde Win */
+    background-color: #E0FFF7;
+}
+
+.entel {
+    border-left: 10px solid #009c3d; /* Verde Entel */
+    background-color: #E8F9E8;
+}
+
+.bitel {
+    border-left: 10px solid #2c9c66; /* Verde Bitel */
+    background-color: #E0F9E0;
+}
+
+.tarjeta h3 {
+    font-size: 1.6em;
+    color: #2C3E50;
+}
+
+.tarjeta p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Apreciación final */
+.apreciacion-final {
+    margin-top: 30px;
+    background-color: #f9f9f9;
     padding: 20px;
-    margin-top: 40px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.apreciacion-final h4 {
+    font-size: 1.5em;
+    color: #2C3E50;
+}
+
+.apreciacion-final p {
+    font-size: 1.2em;
+    color: #555;
 }
 

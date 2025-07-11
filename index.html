@@ -7,6 +7,9 @@
     <title>Brecha Digital en Lima Metropolitana</title>
     <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Cargar la librería de SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -14,32 +17,36 @@
     <header>
         <div class="container">
             <h1>Brecha Digital en Lima Metropolitana</h1>
+            <p>Comparación de los planes de internet disponibles en Lima Metropolitana de distintas marcas.</p>
         </div>
     </header>
 
-    <!-- Sección de selección de distrito -->
-    <section id="distritos">
+    <!-- Sección de información sobre la comparación -->
+    <section id="informacion">
         <div class="container">
-            <h2>Selecciona tu Distrito</h2>
-            <p>Por favor, selecciona tu distrito para obtener información sobre los planes de internet disponibles.</p>
-            <div class="selector">
-                <select id="selectDistrito">
-                    <option value="distrito1">Distrito 1</option>
-                    <option value="distrito2">Distrito 2</option>
-                    <option value="distrito3">Distrito 3</option>
-                </select>
-                <button onclick="mostrarPlanes()">Ver Planes</button>
+            <h2>¿Por qué comparar marcas?</h2>
+            <p>En este análisis, comparamos las principales marcas de internet de Lima Metropolitana, como Claro, Movistar, Win, Bitel y otras. Evaluamos factores clave como:</p>
+            <ul>
+                <li><strong>Precio promedio</strong>: ¿Cuánto cuesta el plan promedio de cada marca?</li>
+                <li><strong>Velocidad promedio</strong>: ¿Qué tan rápida es la conexión promedio por marca?</li>
+                <li><strong>Extras ofrecidos</strong>: Beneficios adicionales, como bonos, canales y más.</li>
+            </ul>
+            <p>Haz clic en el botón a continuación para ver la comparación detallada de las marcas.</p>
+        </div>
+    </section>
+
+    <!-- Sección para comparar las marcas de los planes -->
+    <section id="comparacion">
+        <div class="container">
+            <h2>Comparar Marcas de Planes de Internet</h2>
+            <div class="comparacion-boton">
+                <button onclick="compararMarcas()">Comparar Marcas</button>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Planes (inicialmente oculta) -->
-    <section id="planes" class="hidden">
-        <div class="container">
-            <h2>Planes de Internet para el Distrito Seleccionado</h2>
-            <div id="tablaPlanes"></div>
-        </div>
-    </section>
+    <!-- Sección para mostrar la comparación de marcas -->
+    <section id="tablaPlanes" class="centrado"></section>
 
     <!-- Pie de página -->
     <footer>
