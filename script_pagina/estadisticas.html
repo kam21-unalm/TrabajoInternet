@@ -5,53 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas de Planes en Lima Metropolitana</title>
 
-    <!-- Cargar la librería Chart.js para crear gráficos -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Vincular el archivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Cargar la librería SheetJS para leer el archivo Excel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
-    <!-- Vincular el archivo de estilos CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Establecer el fondo para toda la página */
+        body {
+            margin: 0;  /* Eliminar márgenes por defecto */
+            padding: 0;
+            background-image: url('fondo3.jpg');  /* Ruta de la nueva imagen de fondo */
+            background-size: cover;  /* Asegura que la imagen cubra toda la pantalla */
+            background-position: center center;  /* Centra la imagen */
+            background-repeat: no-repeat;  /* No repetir la imagen */
+        }
+
+        /* Estilo para la cabecera */
+        header {
+            background-color: #000;  /* Fondo negro para el encabezado */
+            color: white;  /* Texto blanco */
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Estilo para la sección de gráficos */
+        #estadisticas {
+            padding: 30px;
+            background-color: white;  /* Fondo blanco para los gráficos */
+            border: 3px solid black;
+            border-radius: 12px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        /* Aumentar el tamaño de los ejes X e Y */
+        .axis-label {
+            font-size: 18px;  /* Aumentar tamaño de los ejes */
+            font-weight: bold;  /* Hacer los ejes más destacados */
+        }
+
+        /* Estilo para la conclusión */
+        .conclusion {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.3em;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <header style="background-color: #333; color: white; padding: 40px 0; text-align: center;">
-        <div class="container">
-            <h1>Estadísticas de Planes en Lima Metropolitana</h1>
-            <p>Comparación y análisis de los planes de internet disponibles en Lima Metropolitana de distintas marcas.</p>
-        </div>
+    <!-- Cabecera -->
+    <header>
+        <h1>Estadísticas de Planes en Lima Metropolitana</h1>
+        <p>Comparación y análisis de los planes de internet disponibles en Lima Metropolitana de distintas marcas.</p>
     </header>
 
-    <!-- Descripción y estadísticas -->
+    <!-- Sección de estadísticas -->
     <section id="estadisticas">
         <div class="container">
-            <h2>Análisis de Precios, Velocidad y Extras</h2>
-            <p>En esta sección, mostramos estadísticas detalladas sobre el costo promedio, la velocidad promedio y los beneficios adicionales (como bonos y canales) ofrecidos por las principales marcas de internet en Lima Metropolitana.</p>
+            <h2 style="font-size: 2.5em; color: #333;">Análisis de Precios, Velocidad y Extras</h2>
+            <p style="font-size: 1.3em; color: #666; margin-bottom: 30px;">
+                En esta sección, mostramos estadísticas detalladas sobre el costo promedio, la velocidad promedio y los beneficios adicionales ofrecidos por las principales marcas de internet en Lima Metropolitana.
+            </p>
 
-            <h3>Gráficos de Comparación</h3>
-            <!-- Gráfico de Barras -->
-            <canvas id="graficoBarras" width="400" height="200"></canvas>
+            <h3 style="font-size: 2em; color: #333; margin-bottom: 30px;">Gráficos de Comparación</h3>
 
-            <!-- Gráfico de Dispersión -->
-            <canvas id="graficoDispersión" width="400" height="200"></canvas>
+            <!-- Gráfico de Barras (Imagen generada por Python) -->
+            <div style="margin-bottom: 50px;">
+                <h4 style="font-size: 1.8em; color: #444;">Gráfico de Barras</h4>
+                <img id="graficoBarras" src="" alt="Gráfico de Barras" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+            </div>
 
-            <!-- Gráfico de Araña (Radar) -->
-            <canvas id="graficoRadar" width="400" height="200"></canvas>
+            <!-- Gráfico de Dispersión (Imagen generada por Python) -->
+            <div>
+                <h4 style="font-size: 1.8em; color: #444;">Gráfico de Dispersión</h4>
+                <img id="graficoDispersion" src="" alt="Gráfico de Dispersión" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;">
+            </div>
         </div>
     </section>
 
-    <!-- Botón de "Ver Planes en Lima Metropolitana" -->
-    <footer>
-        <div class="container">
-            <a href="index.html">
-                <button class="boton-dashboard">
-                    <span role="img" aria-label="chart">📊</span> Ver Planes en Lima Metropolitana
-                </button>
-            </a>
-        </div>
-    </footer>
+    <!-- Conclusión General -->
+    <section class="conclusion">
+        <h3>Conclusión General</h3>
+        <p>
+            En los gráficos presentados, podemos observar que los precios de los planes de internet varían considerablemente entre los diferentes proveedores. Claro tiene el precio promedio más alto, lo que sugiere que ofrece planes más completos con mayor velocidad. Sin embargo, otros proveedores como Bitel, Entel, y Movistar ofrecen precios más bajos, lo que podría indicar planes más accesibles pero con características limitadas.
+        </p>
+        <p>
+            En cuanto a la relación entre el precio y la velocidad de los planes, observamos que, en general, a mayor precio, la velocidad tiende a ser mayor. No obstante, algunos planes más económicos ofrecen velocidades relativamente altas, lo que indica que la velocidad no siempre está directamente relacionada con el precio.
+        </p>
+    </section>
 
-    <!-- Referencia al archivo JavaScript EstScript.js -->
-    <script src="scripts/EstScript.js"></script>  <!-- Aquí se vincula EstScript.js -->
+    <!-- Vincular el archivo JS -->
+    <script src="EstScript.js"></script>
+
+    <script>
+        // Llamamos a la función para mostrar las imágenes una vez que la página haya cargado
+        window.onload = mostrarImagenes;
+    </script>
 </body>
 </html>

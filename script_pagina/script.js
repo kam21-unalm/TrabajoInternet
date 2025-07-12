@@ -7,7 +7,7 @@ function cargarDistritos() {
             const distritos = new Set(); // Usar un Set para evitar duplicados
 
             // Procesar la primera fila (encabezados), que tiene los nombres de las columnas
-            const headers = rows[0].split('\t'); // Separar por tabulaciones
+            const headers = rows[0].split(','); // Cambiar de '\t' a ',' para separar por comas
             let distritoIndex = headers.indexOf('DISTRITO'); // Buscar la columna DISTRITO
 
             // Verificar si la columna DISTRITO existe
@@ -18,7 +18,7 @@ function cargarDistritos() {
 
             // Recorrer las filas restantes del archivo (desde la segunda fila) para extraer los distritos
             rows.slice(1).forEach(row => {
-                const columns = row.split('\t'); // Separar por tabulaciones
+                const columns = row.split(','); // Cambiar de '\t' a ',' para separar por comas
                 const distrito = columns[distritoIndex].trim(); // Extraer el nombre del distrito
                 if (distrito) {
                     distritos.add(distrito); // Agregar al Set para evitar duplicados
