@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas de Planes en Lima Metropolitana</title>
+
+    <!-- Cargar la librería Chart.js para crear gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Cargar la librería SheetJS para leer el archivo Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <!-- Vincular el archivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header style="background-color: #333; color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <h1>Estadísticas de Planes en Lima Metropolitana</h1>
+            <p>Comparación y análisis de los planes de internet disponibles en Lima Metropolitana de distintas marcas.</p>
+        </div>
+    </header>
+
+    <!-- Descripción y estadísticas -->
+    <section id="estadisticas">
+        <div class="container">
+            <h2>Análisis de Precios, Velocidad y Extras</h2>
+            <p>En esta sección, mostramos estadísticas detalladas sobre el costo promedio, la velocidad promedio y los beneficios adicionales (como bonos y canales) ofrecidos por las principales marcas de internet en Lima Metropolitana.</p>
+
+            <h3>Gráficos de Comparación</h3>
+            <!-- Gráfico de Barras -->
+            <canvas id="graficoBarras" width="400" height="200"></canvas>
+
+            <!-- Gráfico de Dispersión -->
+            <canvas id="graficoDispersión" width="400" height="200"></canvas>
+
+            <!-- Gráfico de Araña (Radar) -->
+            <canvas id="graficoRadar" width="400" height="200"></canvas>
+        </div>
+    </section>
+
+    <!-- Botón de "Ver Planes en Lima Metropolitana" -->
+    <footer>
+        <div class="container">
+            <a href="index.html">
+                <button class="boton-dashboard">
+                    <span role="img" aria-label="chart">📊</span> Ver Planes en Lima Metropolitana
+                </button>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Referencia al archivo JavaScript EstScript.js -->
+    <script src="scripts/EstScript.js"></script>  <!-- Aquí se vincula EstScript.js -->
+</body>
+</html>
