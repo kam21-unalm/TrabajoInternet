@@ -1,0 +1,106 @@
+/* Imagen de fondo debajo del encabezado */
+#fondoImagen {
+    background-image: url('../imagenes/fondo1.jpg');  /* Ruta correcta de la imagen */
+    background-size: cover;  /* La imagen cubrirá todo el espacio disponible */
+    background-position: center center;  /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 500px;  /* Ajusta la altura para que se vea como una franja horizontal */
+    width: 100%;  /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Sección para alinear las imágenes de marcas en una fila */
+#informacion {
+    display: flex; /* Hace que las imágenes estén en una fila */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Alinea verticalmente las imágenes */
+    gap: 30px; /* Espacio entre las imágenes */
+    margin-top: 30px; /* Espacio superior */
+}
+
+/* Estilo para las imágenes de las marcas */
+.marca-izquierda img, .marca-derecha img {
+    width: 500px;  /* Aumenté el tamaño de las imágenes */
+    height: auto;
+    margin: 0 20px; /* Espacio entre las imágenes y el texto */
+}
+
+/* Estilos generales para el botón de búsqueda */
+.boton-buscar {
+    border-radius: 50%; /* Hacer el botón circular */
+    width: 50px;  /* Ancho del círculo */
+    height: 50px;  /* Alto del círculo */
+    background-color: #16A085; /* Color de fondo verde */
+    color: white;
+    font-size: 1.5em;  /* Tamaño del ícono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Efecto al pasar el ratón */
+    margin-left: 10px; /* Reducido el margen izquierdo para acercar el botón */
+}
+
+/* Estilo para el campo de selección */
+#distritoSelect {
+    padding: 12px;
+    font-size: 1.3em;  /* Aumento el tamaño de la letra del select */
+    width: 300px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-right: 10px; /* Reducido el margen derecho para acercar el campo */
+}
+
+/* Estilo para el título de "Planes de Internet" */
+#planesDeInternet {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#planesDeInternet h2 {
+    font-size: 3.5em;  /* Reduje el tamaño del título */
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Estilo para el encabezado */
+header h1 {
+    font-size: 5.5em;  /* Aumento más el tamaño del encabezado */
+    letter-spacing: 2px;
+    font-weight: 700;  /* Aumento el grosor de la fuente */
+}
+
+header p {
+    font-size: 2em;  /* Aumento el tamaño de la descripción */
+    margin-top: 10px;
+}
+
+/* Estilo para el botón de "Ver Planes en Lima Metropolitana" */
+.boton-dashboard {
+    padding: 12px 20px;
+    background-color: #D0A98E;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;  /* Aumento el tamaño del texto */
+    border: none;
+    border-radius: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin: 20px auto; /* Centra el botón */
+}
+
+.boton-dashboard i {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+/* Efecto al pasar el ratón sobre el botón "Ver Planes en Lima Metropolitana" */
+.boton-dashboard:hover {
+    transform: scale(1.05);
+    background-color: #B48E6E;
+}
