@@ -84,12 +84,36 @@
         </div>
     </section>
 
-    <!-- Botón de "Ver Dashboard" con emoji -->
-    <section id="dashboard" style="text-align: center; margin-top: 30px;">
-        <div class="container">
-            <a href="script_pagina/estadisticas2.html">
-                <button class="boton-dashboard boton-dashboard-ver">
-                    📊 Ver Dashboard
+<!-- Botón para ver el Mapa Interactivo de Pobreza -->
+<section id="mapa">
+    <div class="container" style="text-align: center; margin-top: 30px;">
+        <button onclick="window.open('mapa/mapa.html', '_blank')" class="boton-dashboard">
+            🗺️ Ver Mapa Interactivo de Pobreza por Distrito
+        </button>
+    </div>
+</section>
+
+<!-- Botón de "Ver Planes en Lima Metropolitana" -->
+<section id="dashboard">
+    <div class="container" style="text-align: center; margin-top: 30px;">
+        <a href="script_pagina/estadisticas.html">
+            <button class="boton-dashboard boton-dashboard-estadisticas">
+                📊 Ver Planes en Lima Metropolitana
+            </button>
+        </a>
+    </div>
+</section>
+
+<!-- Botón de "Ver Dashboard" -->
+<section id="dashboard2">
+    <div class="container" style="text-align: center; margin-top: 30px;">
+        <a href="script_pagina/estadisticas2.html">
+            <button class="boton-dashboard boton-dashboard-ver">
+                📊 Ver Dashboard
+            </button>
+        </a>
+    </div>
+</section>
                 </button>
             </a>
         </div>
