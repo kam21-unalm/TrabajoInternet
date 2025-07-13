@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mapa de Pobreza - Lima Metropolitana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 1rem 0;
+      color: #333;
+    }
+
+    #map {
+      height: 90vh;
+      margin: 0 1rem 1rem 1rem;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Índice de Pobreza por Distrito - Lima Metropolitana</h1>
+  <div id="map"></div>
+
+  <!-- JS Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Tu script de mapa -->
+  <script src="mapa.js"></script>
+</body>
+</html>
