@@ -1,3 +1,4 @@
+index:
 <!DOCTYPE html>
 <html lang="es">
 
@@ -86,6 +87,45 @@
         </div>
     </section>
 
+
+<!-- Botón de "Ver Planes en Lima Metropolitana" con emoji -->
+<section id="dashboard" style="text-align: center; margin-top: 30px;">
+    <div class="container" style="text-align: center; margin-top: 30px;">
+        <a href="estadisticas2.html">
+            <button class="dashboard-button">
+                <span role="img" aria-label="chart">📊</span> Dashboard
+            </button>
+        </a>
+    </div>
+</section>
+
+<style>
+    /* Estilos del botón Dashboard */
+    .dashboard-button {
+        padding: 10px 20px;
+        background-color: #4CAF50; /* Color verde */
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.2s ease; /* Suaviza la animación */
+        display: inline-flex;
+        align-items: center; /* Alineación del emoji con el texto */
+    }
+
+    /* Efecto de agrandado cuando el botón es presionado */
+    .dashboard-button:active {
+        transform: scale(1.2); /* Aumenta el tamaño del botón al 120% */
+    }
+
+    /* Espaciado entre el emoji y el texto */
+    .dashboard-button span {
+        margin-right: 8px; /* Ajusta la distancia entre el emoji y el texto */
+    }
+</style>
+
+
     <!-- Pie de página con nombres de los integrantes -->
     <footer>
         <div class="container">
@@ -97,5 +137,3 @@
     <script src="EstScript.js"></script>  <!-- Aquí se vincula EstScript.js -->
     <script src="script.js"></script>  <!-- Este es el archivo que contiene el código para cargar los distritos -->
 </body>
-
-</html>
