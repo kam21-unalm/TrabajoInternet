@@ -7,7 +7,7 @@
     <title>Brecha Digital en Lima Metropolitana</title>
 
     <!-- Enlace al archivo CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script_pagina/styles.css"> <!-- Asegúrate de que la ruta del CSS sea correcta -->
 
     <!-- Cargar FontAwesome para el ícono de lupa -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -35,13 +35,10 @@
 
     <!-- Sección de información sobre la comparación -->
     <section id="informacion">
-        <!-- Imagen de marca a la izquierda -->
         <div class="marca-izquierda">
-            <!-- Ajustar la ruta de las imágenes aquí -->
-            <img src="../imagenes/marcas.jpg" alt="Marca 1">
+            <img src="imagenes/marcas.jpg" alt="Marca 1">
         </div>
 
-        <!-- Contenido central -->
         <div class="contenido-central" style="text-align: center; max-width: 600px;">
             <h2>¿Por qué comparar marcas?</h2>
             <p>En este análisis, comparamos las principales marcas de internet de Lima Metropolitana, como Claro, Movistar, Win, Bitel y otras. Evaluamos factores clave como:</p>
@@ -53,10 +50,8 @@
             <p>Al comparar las marcas, podemos identificar cuál ofrece el mejor servicio según las necesidades de los usuarios en Lima Metropolitana, ayudando a tomar decisiones más informadas sobre la contratación de internet.</p>
         </div>
 
-        <!-- Imagen de marca a la derecha -->
         <div class="marca-derecha">
-            <!-- Ajustar la ruta de las imágenes aquí -->
-            <img src="../imagenes/marcas2.png" alt="Marca 2">
+            <img src="imagenes/marcas2.png" alt="Marca 2">
         </div>
     </section>
 
@@ -78,9 +73,15 @@
     <!-- Botón de "Ver Planes en Lima Metropolitana" con emoji -->
     <section id="dashboard">
         <div class="container" style="text-align: center; margin-top: 30px;">
-            <a href="estadisticas.html">
+            <a href="script_pagina/estadisticas.html">
                 <button class="boton-dashboard">
-                    <span role="img" aria-label="chart">📊</span> Ver Planes en Lima Metropolitana
+                    📊 Ver Planes en Lima Metropolitana
+                </button>
+            </a>
+
+            <a href="script_pagina/estadisticas2.html">
+                <button class="boton-dashboard">
+                    📊 Ver Estadísticas Avanzadas
                 </button>
             </a>
         </div>
@@ -94,6 +95,8 @@
     </footer>
 
     <!-- Referencia al archivo JavaScript -->
-    <script src="EstScript.js"></script>  <!-- Aquí se vincula EstScript.js -->
-    <script src="script.js"></script>  <!-- Este es el archivo que contiene el código para cargar los distritos -->
+    <script src="script_pagina/EstScript.js"></script>  <!-- Aquí se vincula EstScript.js -->
+    <script src="script_pagina/script.js"></script>  <!-- Este es el archivo que contiene el código para cargar los distritos -->
 </body>
+
+</html>
