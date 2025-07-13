@@ -14,6 +14,19 @@
 
     <!-- Cargar la librería de SheetJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <!-- Estilos para la imagen de fondo -->
+    <style>
+        /* Estilo para la imagen de Lima como fondo */
+        #fondoImagen {
+            width: 100%;
+            height: 300px; /* Altura fija o dinámica según prefieras */
+            background-image: url("../imagenes/fondo1.jpg");
+            background-size: cover; /* Hace que la imagen ocupe toda la sección */
+            background-position: center center; /* Alinea la imagen al centro */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
+    </style>
 </head>
 
 <body>
@@ -36,7 +49,7 @@
     <!-- Sección de información sobre la comparación -->
     <section id="informacion">
         <div class="marca-izquierda">
-            <img src="imagenes/marcas.jpg" alt="Marca 1">
+            <img src="../imagenes/marcas.jpg" alt="Marca 1">
         </div>
 
         <div class="contenido-central" style="text-align: center; max-width: 600px;">
@@ -51,7 +64,7 @@
         </div>
 
         <div class="marca-derecha">
-            <img src="imagenes/marcas2.png" alt="Marca 2">
+            <img src="../imagenes/marcas2.png" alt="Marca 2">
         </div>
     </section>
 
@@ -60,8 +73,9 @@
         <div class="container" style="text-align: center; margin-top: 30px;">
             <h2>Selecciona tu Distrito</h2>
             <div class="busqueda" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-                <select id="distritoSelect" style="padding: 10px; font-size: 1.1em; width: 300px; border-radius: 6px; border: 1px solid #ddd;">
+                <select id="distritoSelect">
                     <option value="" disabled selected>Seleccionar Distrito...</option>
+                    <!-- Aquí deberías cargar los distritos dinámicamente -->
                 </select>
                 <button id="searchBtn" onclick="buscarDistrito()" class="boton-buscar">
                     <i class="fa fa-search"></i> <!-- Icono de lupa -->
@@ -70,7 +84,7 @@
         </div>
     </section>
 
-    <!-- Botón para ver el Mapa Interactivo de Pobreza -->
+<!-- Botón para ver el Mapa Interactivo de Pobreza -->
 <section id="mapa">
     <div class="container" style="text-align: center; margin-top: 30px;">
         <button onclick="window.open('mapa/mapa.html', '_blank')" class="boton-dashboard">
@@ -79,17 +93,37 @@
     </div>
 </section>
 
-    <!-- Botón de "Ver Planes en Lima Metropolitana" con emoji -->
-    <section id="dashboard">
-        <div class="container" style="text-align: center; margin-top: 30px;">
-            <a href="script_pagina/estadisticas.html">
-                <button class="boton-dashboard">
-                    📊 Ver Planes en Lima Metropolitana
+<!-- Botón de "Ver Planes en Lima Metropolitana" -->
+<section id="dashboard">
+    <div class="container" style="text-align: center; margin-top: 30px;">
+        <a href="script_pagina/estadisticas.html">
+            <button class="boton-dashboard boton-dashboard-estadisticas">
+                📊 Ver Planes en Lima Metropolitana
+            </button>
+        </a>
+    </div>
+</section>
+
+<!-- Botón de "Ver Dashboard" -->
+<section id="dashboard2">
+    <div class="container" style="text-align: center; margin-top: 30px;">
+        <a href="script_pagina/estadisticas2.html">
+            <button class="boton-dashboard boton-dashboard-ver">
+                📊 Ver Dashboard
+            </button>
+        </a>
+    </div>
+</section>
                 </button>
             </a>
+        </div>
+    </section>
 
-            <a href="script_pagina/estadisticas2.html">
-                <button class="boton-dashboard">
+    <!-- Botón de "Ver Planes en Lima Metropolitana" con emoji -->
+    <section id="dashboard" style="text-align: center; margin-top: 30px;">
+        <div class="container">
+            <a href="script_pagina/estadisticas.html">
+                <button class="boton-dashboard boton-dashboard-estadisticas">
                     📊 Ver Estadísticas Avanzadas
                 </button>
             </a>
