@@ -1,73 +1,95 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
+import plotly.express as px
+import numpy as np  # Necesario para manejar los valores nulos
 
-# Ruta del archivo Excel
-ruta = r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\data\planes_todas_empresas.xlsx"
+# Ruta del archivo CSV
+csv_path = r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\processed_data\merged_data_final.csv"
+df = pd.read_csv(csv_path)
 
-# Leer el archivo Excel
-df = pd.read_excel(ruta)
+# Preprocesamiento de los datos
+df['Velocidad regular'] = df['RANGO_VELOC_BAJADA'].replace({' Mbps': '', ',': '', 'No indica': np.nan}, regex=True)
+df['Velocidad regular'] = pd.to_numeric(df['Velocidad regular'], errors='coerce')  # Convertir a numérico, NaN si no es posible
+df['Velocidad regular'] = df['Velocidad regular'].fillna(df['Velocidad regular'].median())  # Rellenar con la mediana
 
-# Preprocesar los datos
-df['Precio regular'] = df['Precio regular'].replace({'S/': '', ',': ''}, regex=True).astype(float)
-df['Velocidad regular'] = df['Velocidad regular'].replace({' Mbps': '', ',': '', 'No indica': np.nan}, regex=True)
-df['Velocidad regular'] = pd.to_numeric(df['Velocidad regular'], errors='coerce')
+# --- Gráfico 1: Distribución de Tecnologías por Distrito ---
+df_tec_distrito = df.groupby(['DISTRITO', 'TECNOLOGIA']).size().reset_index(name='count')
+fig1 = px.bar(df_tec_distrito, 
+              x="DISTRITO", 
+              y="count", 
+              color="TECNOLOGIA", 
+              title="Distribución de Tecnologías de Internet por Distrito",
+              labels={"count": "Número de Planes", "DISTRITO": "Distrito", "TECNOLOGIA": "Tecnología"})
 
-# Definir colores personalizados para cada proveedor
-colores = {
-    'Bitel': 'yellow',        # Amarillo
-    'Claro': 'red',           # Rojo
-    'Entel': 'blue',          # Azul
-    'Movistar': '#00bcd4',    # Celeste (código de color)
-    'Win': 'orange',          # Naranja
-    'Wow': 'purple'           # Morado
-}
+# Guardar el gráfico 1 como un archivo HTML
+fig1.write_html(r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\script_pagina\grafico1.html")
 
-# --- Gráfico de barras: Precio promedio de los planes por proveedor ---
-precio_por_proveedor = df.groupby('Proveedor')['Precio regular'].mean()
+# --- Gráfico 2: Número de Proveedores por Distrito ---
+df_distrito_proveedores = df.groupby('DISTRITO')['EMPRESA'].nunique().reset_index(name='num_proveedores')
+fig2 = px.bar(df_distrito_proveedores, 
+              x="DISTRITO", 
+              y="num_proveedores", 
+              title="Número de Proveedores por Distrito", 
+              labels={"num_proveedores": "Número de Proveedores", "DISTRITO": "Distrito"})
 
-# Crear gráfico de barras con colores personalizados
-plt.figure(figsize=(10, 6))
-bars = precio_por_proveedor.plot(kind='bar', color=[colores[proveedor] for proveedor in precio_por_proveedor.index])
-plt.title('Precio Promedio de Planes por Proveedor', fontsize=16)
-plt.xlabel('Proveedor', fontsize=14)
-plt.ylabel('Precio Promedio (S/)', fontsize=14)
+# Guardar el gráfico 2 como un archivo HTML
+fig2.write_html(r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\script_pagina\grafico2.html")
 
-# Añadir rejilla
-plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+# --- Gráfico 3: Pie Chart - Distribución de Tecnologías ---
+df_tec_count = df['TECNOLOGIA'].value_counts().reset_index()
+df_tec_count.columns = ['Tecnología', 'Cantidad']
+fig3 = px.pie(df_tec_count, 
+              names='Tecnología', 
+              values='Cantidad', 
+              title='Distribución de Tecnologías de Internet')
 
-# Ajustar el gráfico para que no se corten las etiquetas
-plt.tight_layout()
+# Guardar el gráfico 3 como un archivo HTML
+fig3.write_html(r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\script_pagina\grafico3.html")
 
-# Guardar la imagen del gráfico de barras en la carpeta 'script_pagina'
-plt.savefig(r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\script_pagina\grafico_barras.png")
-plt.close()
+# --- Gráfico 4: Moda de las Empresas (Frecuencia de Empresas) ---
+df_empresa_frecuencia = df['EMPRESA'].value_counts().reset_index()
+df_empresa_frecuencia.columns = ['Empresa', 'Frecuencia']
+fig4 = px.bar(df_empresa_frecuencia, 
+              x='Empresa', 
+              y='Frecuencia', 
+              title='Moda de las Empresas (Frecuencia por Empresa)', 
+              labels={'Empresa': 'Nombre de la Empresa', 'Frecuencia': 'Frecuencia'},
+              color='Frecuencia', color_continuous_scale='Viridis')
 
-# --- Gráfico de dispersión: Relación entre Precio y Velocidad ---
-plt.figure(figsize=(10, 6))
+# Ajuste para alargar el gráfico
+fig4.update_layout(
+    xaxis_tickangle=-45,  # Inclina las etiquetas para que se vean mejor
+    height=600,           # Aumenta la altura para hacerlo más largo
+    width=1000,           # Aumenta el ancho del gráfico
+    margin=dict(l=0, r=0, t=40, b=100)  # Ajusta los márgenes para mejor presentación
+)
 
-# Crear el gráfico de dispersión
-for proveedor in df['Proveedor'].unique():
-    data = df[df['Proveedor'] == proveedor]
-    plt.scatter(data['Precio regular'], data['Velocidad regular'], 
-                color=colores[proveedor], label=proveedor, alpha=0.7, s=100)
+# Guardar el gráfico 4 como un archivo HTML
+fig4.write_html(r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\script_pagina\grafico4.html")
 
-# Añadir título y etiquetas
-plt.title('Relación entre Precio y Velocidad de Planes de Internet', fontsize=16)
-plt.xlabel('Precio (S/)', fontsize=14)
-plt.ylabel('Velocidad (Mbps)', fontsize=14)
 
-# Añadir rejilla
-plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+# --- Gráfico 5: Resumen de Tendencias Clave ---
+df_resumen = df.groupby('DISTRITO').agg(
+    num_proveedores=('EMPRESA', 'nunique'),
+    velocidad_promedio=('Velocidad regular', 'mean'),
+    num_empresas=('EMPRESA', 'nunique')
+).reset_index()
 
-# Añadir leyenda
-plt.legend(title="Proveedores", loc="upper left", fontsize=12)
+fig5 = px.bar(df_resumen, 
+              x="DISTRITO", 
+              y=["num_proveedores", "velocidad_promedio", "num_empresas"], 
+              title="Resumen de Tendencias Clave por Distrito",
+              labels={
+                  "num_proveedores": "Número de Proveedores",
+                  "velocidad_promedio": "Velocidad Promedio (Mbps)",
+                  "num_empresas": "Número de Empresas"
+              },
+              barmode='group')
 
-# Ajustar la visualización
-plt.tight_layout()
+# Guardar el gráfico 5 como un archivo HTML
+fig5.write_html(r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\script_pagina\grafico5.html")
 
-# Guardar la imagen del gráfico de dispersión en la carpeta 'script_pagina'
-plt.savefig(r"C:\Users\Usuario\Documents\final_ana\TrabajoInternet\script_pagina\grafico_dispersion.png")
-plt.close()
+
+
+
+
 

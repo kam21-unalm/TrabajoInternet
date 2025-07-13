@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas de Planes de Internet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: #f8f8f8;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.2em;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 2em;
+            color: #555;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;  /* Dos columnas */
+            gap: 2rem;
+        }
+
+        .grafico {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .grafico-principal {
+            grid-column: span 2;  /* Hace que el primer gráfico ocupe ambas columnas */
+            height: 600px;         /* Altura para el primer gráfico */
+        }
+
+        @media (max-width: 1000px) {
+            .grid {
+                grid-template-columns: 1fr;  /* Una columna en móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Estadísticas de Planes de Internet</h1>
+    <p>Visualiza los datos sobre los planes de internet y proveedores en Lima Metropolitana.</p>
+
+    <div class="grid">
+        <!-- Primer gráfico (Distribución de Tecnologías por Distrito) -->
+        <div class="grafico grafico-principal">
+            <iframe src="grafico1.html" width="100%" height="100%"></iframe>
+        </div>
+
+        <!-- Incluir el gráfico 2 (Número de Proveedores por Distrito) -->
+        <div class="grafico">
+            <iframe src="grafico2.html" width="100%" height="500px"></iframe>
+        </div>
+
+        <!-- Incluir el gráfico 3 (Distribución de Tecnologías) -->
+        <div class="grafico">
+            <iframe src="grafico3.html" width="100%" height="500px"></iframe>
+        </div>
+
+        <!-- Incluir el gráfico 4 (Moda de las Empresas) -->
+        <div class="grafico">
+            <iframe src="grafico4.html" width="100%" height="500px"></iframe>
+        </div>
+
+        <!-- Incluir el gráfico 5 (Resumen de Tendencias Clave por Distrito) -->
+        <div class="grafico">
+            <iframe src="grafico5.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+</body>
+</html>
