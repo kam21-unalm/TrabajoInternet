@@ -28,10 +28,10 @@ fetch('../processed_data/pobreza_lima.csv')  // ✅ Ruta ajustada
 
     // Función para asignar colores según la pobreza
     function getColor(p) {
-      return p > 40 ? '#800026' :
-             p > 30 ? '#BD0026' :
-             p > 20 ? '#E31A1C' :
-             p > 10 ? '#FC4E2A' :
+      return p > 25 ? '#800026' :
+             p > 15 ? '#BD0026' :
+             p > 10 ? '#E31A1C' :
+             p > 5 ? '#FC4E2A' :
              p > 0  ? '#FD8D3C' :
                       '#FFEDA0';
     }
