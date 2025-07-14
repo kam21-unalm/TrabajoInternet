@@ -2,34 +2,35 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brecha Digital en Lima Metropolitana</title>
 
-    <!-- Estilos principales -->
-    <link rel="stylesheet" href="script_pagina/styles.css" />
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="script_pagina/styles.css" /> <!-- Asegúrate de que la ruta del CSS sea correcta -->
 
-    <!-- Íconos FontAwesome -->
+    <!-- Cargar FontAwesome para el ícono de lupa -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
-    <!-- Librería SheetJS -->
+    <!-- Cargar la librería de SheetJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
-    <!-- Imagen de fondo (estilos internos) -->
+    <!-- Estilos para la imagen de fondo -->
     <style>
+        /* Estilo para la imagen de Lima como fondo */
         #fondoImagen {
             width: 100%;
-            height: 300px;
+            height: 300px; /* Altura fija o dinámica según prefieras */
             background-image: url("../imagenes/fondo1.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-size: cover; /* Hace que la imagen ocupe toda la sección */
+            background-position: center center; /* Alinea la imagen al centro */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
         }
     </style>
 </head>
 
 <body>
-    <!-- Encabezado -->
+    <!-- Encabezado con imágenes de fondo -->
     <header style="background-color: #333; color: white; padding: 40px 0; text-align: center;">
         <div class="container">
             <h1>Brecha Digital en Lima Metropolitana</h1>
@@ -37,15 +38,15 @@
         </div>
     </header>
 
-    <!-- Imagen debajo del encabezado -->
+    <!-- Imagen de fondo debajo del encabezado -->
     <section id="fondoImagen"></section>
 
-    <!-- Título principal -->
+    <!-- Título de "Planes de Internet" -->
     <section id="planesDeInternet" style="text-align: center; margin-top: 30px;">
         <h2>Planes de Internet</h2>
     </section>
 
-    <!-- Información de comparación -->
+    <!-- Sección de información sobre la comparación -->
     <section id="informacion">
         <div class="marca-izquierda">
             <img src="../imagenes/marcas.jpg" alt="Marca 1" />
@@ -55,9 +56,9 @@
             <h2>¿Por qué comparar marcas?</h2>
             <p>En este análisis, comparamos las principales marcas de internet de Lima Metropolitana, como Claro, Movistar, Win, Bitel y otras. Evaluamos factores clave como:</p>
             <ul>
-                <li><strong>Precio promedio:</strong> ¿Cuánto cuesta el plan promedio de cada marca?</li>
-                <li><strong>Velocidad promedio:</strong> ¿Qué tan rápida es la conexión promedio por marca?</li>
-                <li><strong>Extras ofrecidos:</strong> Beneficios adicionales, como bonos, canales y más.</li>
+                <li><strong>Precio promedio</strong>: ¿Cuánto cuesta el plan promedio de cada marca?</li>
+                <li><strong>Velocidad promedio</strong>: ¿Qué tan rápida es la conexión promedio por marca?</li>
+                <li><strong>Extras ofrecidos</strong>: Beneficios adicionales, como bonos, canales y más.</li>
             </ul>
             <p>Al comparar las marcas, podemos identificar cuál ofrece el mejor servicio según las necesidades de los usuarios en Lima Metropolitana, ayudando a tomar decisiones más informadas sobre la contratación de internet.</p>
         </div>
@@ -67,22 +68,7 @@
         </div>
     </section>
 
-    <!-- Sección de búsqueda -->
-    <section id="comparacion">
-        <div class="container" style="text-align: center; margin-top: 30px;">
-            <h2>Selecciona tu Distrito</h2>
-            <div class="busqueda" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-                <select id="distritoSelect">
-                    <option value="" disabled selected>Seleccionar Distrito...</option>
-                </select>
-                <button id="searchBtn" onclick="buscarDistrito()" class="boton-buscar">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Botón: Ver Mapa Interactivo -->
+    <!-- Botón para ver el Mapa Interactivo de Pobreza -->
     <section id="mapa">
         <div class="container" style="text-align: center; margin-top: 30px;">
             <button onclick="window.open('mapa/mapa.html', '_blank')" class="boton-dashboard">
@@ -91,8 +77,8 @@
         </div>
     </section>
 
-    <!-- Botón: Ver Planes en Lima Metropolitana -->
-    <section id="planes-lima">
+    <!-- Botón de "Ver Planes en Lima Metropolitana" con emoji -->
+    <section id="dashboard">
         <div class="container" style="text-align: center; margin-top: 30px;">
             <a href="script_pagina/estadisticas.html">
                 <button class="boton-dashboard">
@@ -102,9 +88,9 @@
         </div>
     </section>
 
-    <!-- Botón: Ver Dashboard -->
-    <section id="dashboard">
-        <div class="container" style="text-align: center; margin-top: 30px;">
+    <!-- Botón de "Ver Dashboard" con emoji -->
+    <section id="dashboard" style="text-align: center; margin-top: 30px;">
+        <div class="container">
             <a href="script_pagina/estadisticas2.html">
                 <button class="boton-dashboard">
                     📊 Ver Dashboard
@@ -113,17 +99,29 @@
         </div>
     </section>
 
-    <!-- Pie de página -->
+    <!-- Botón de "NEW API" con emoji -->
+    <section id="newApi" style="text-align: center; margin-top: 30px;">
+        <div class="container">
+            <a href="script_pagina/noticias.html">
+                <button class="boton-dashboard">
+                    🚀 NEW API
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Pie de página con nombres de los integrantes -->
     <footer>
         <div class="container">
             <p>Integrantes: Kamila Nicoll Saavedra Acuña, Fabiana Rojas Taco, Arturo Ramirez Caro</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="script_pagina/EstScript.js"></script>
+    <!-- Referencia al archivo JavaScript -->
+    <script src="script_pagina/EstScript.js"></script>  
     <script src="script_pagina/script.js"></script>
 </body>
 
 </html>
+
 
