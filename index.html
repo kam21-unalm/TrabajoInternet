@@ -7,10 +7,10 @@
     <title>Brecha Digital en Lima Metropolitana</title>
 
     <!-- Enlace al archivo CSS -->
-    <link rel="stylesheet" href="script_pagina/styles.css" /> <!-- Asegúrate de que la ruta del CSS sea correcta -->
+    <link rel="stylesheet" href="script_pagina/styles.css">
 
     <!-- Cargar FontAwesome para el ícono de lupa -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
     <!-- Cargar la librería de SheetJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
@@ -21,10 +21,32 @@
         #fondoImagen {
             width: 100%;
             height: 300px; /* Altura fija o dinámica según prefieras */
-            background-image: url("../imagenes/fondo1.jpg");
+            background-image: url("imagenes/fondo1.jpg"); /* Asegúrate de que la ruta de la imagen sea correcta */
             background-size: cover; /* Hace que la imagen ocupe toda la sección */
             background-position: center center; /* Alinea la imagen al centro */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
+
+        /* Mejorando el tamaño de la letra */
+        h1, h2, p {
+            font-size: 20px;  /* Aumenta el tamaño de la fuente */
+            line-height: 1.5;
+        }
+
+        /* Estilo de los botones */
+        .boton-dashboard {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .boton-dashboard:active {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -49,7 +71,7 @@
     <!-- Sección de información sobre la comparación -->
     <section id="informacion">
         <div class="marca-izquierda">
-            <img src="../imagenes/marcas.jpg" alt="Marca 1" />
+            <img src="imagenes/marcas.jpg" alt="Marca 1">
         </div>
 
         <div class="contenido-central" style="text-align: center; max-width: 600px;">
@@ -64,7 +86,7 @@
         </div>
 
         <div class="marca-derecha">
-            <img src="../imagenes/marcas2.png" alt="Marca 2" />
+            <img src="imagenes/marcas2.png" alt="Marca 2">
         </div>
     </section>
 
@@ -99,17 +121,6 @@
         </div>
     </section>
 
-    <!-- Botón de "NEW API" con emoji -->
-    <section id="newApi" style="text-align: center; margin-top: 30px;">
-        <div class="container">
-            <a href="script_pagina/noticias.html">
-                <button class="boton-dashboard">
-                    🚀 NEW API
-                </button>
-            </a>
-        </div>
-    </section>
-
     <!-- Pie de página con nombres de los integrantes -->
     <footer>
         <div class="container">
@@ -118,10 +129,8 @@
     </footer>
 
     <!-- Referencia al archivo JavaScript -->
-    <script src="script_pagina/EstScript.js"></script>  
+    <script src="script_pagina/EstScript.js"></script>
     <script src="script_pagina/script.js"></script>
 </body>
 
 </html>
-
-
