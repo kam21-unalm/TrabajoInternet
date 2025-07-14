@@ -2,35 +2,34 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brecha Digital en Lima Metropolitana</title>
 
-    <!-- Enlace al archivo CSS -->
-    <link rel="stylesheet" href="script_pagina/styles.css"> <!-- Asegúrate de que la ruta del CSS sea correcta -->
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="script_pagina/styles.css" />
 
-    <!-- Cargar FontAwesome para el ícono de lupa -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Íconos FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
-    <!-- Cargar la librería de SheetJS -->
+    <!-- Librería SheetJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
-    <!-- Estilos para la imagen de fondo -->
+    <!-- Imagen de fondo (estilos internos) -->
     <style>
-        /* Estilo para la imagen de Lima como fondo */
         #fondoImagen {
             width: 100%;
-            height: 300px; /* Altura fija o dinámica según prefieras */
+            height: 300px;
             background-image: url("../imagenes/fondo1.jpg");
-            background-size: cover; /* Hace que la imagen ocupe toda la sección */
-            background-position: center center; /* Alinea la imagen al centro */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
 
 <body>
-    <!-- Encabezado con imágenes de fondo -->
+    <!-- Encabezado -->
     <header style="background-color: #333; color: white; padding: 40px 0; text-align: center;">
         <div class="container">
             <h1>Brecha Digital en Lima Metropolitana</h1>
@@ -38,108 +37,93 @@
         </div>
     </header>
 
-    <!-- Imagen de fondo debajo del encabezado -->
+    <!-- Imagen debajo del encabezado -->
     <section id="fondoImagen"></section>
 
-    <!-- Título de "Planes de Internet" -->
+    <!-- Título principal -->
     <section id="planesDeInternet" style="text-align: center; margin-top: 30px;">
         <h2>Planes de Internet</h2>
     </section>
 
-    <!-- Sección de información sobre la comparación -->
+    <!-- Información de comparación -->
     <section id="informacion">
         <div class="marca-izquierda">
-            <img src="../imagenes/marcas.jpg" alt="Marca 1">
+            <img src="../imagenes/marcas.jpg" alt="Marca 1" />
         </div>
 
         <div class="contenido-central" style="text-align: center; max-width: 600px;">
             <h2>¿Por qué comparar marcas?</h2>
             <p>En este análisis, comparamos las principales marcas de internet de Lima Metropolitana, como Claro, Movistar, Win, Bitel y otras. Evaluamos factores clave como:</p>
             <ul>
-                <li><strong>Precio promedio</strong>: ¿Cuánto cuesta el plan promedio de cada marca?</li>
-                <li><strong>Velocidad promedio</strong>: ¿Qué tan rápida es la conexión promedio por marca?</li>
-                <li><strong>Extras ofrecidos</strong>: Beneficios adicionales, como bonos, canales y más.</li>
+                <li><strong>Precio promedio:</strong> ¿Cuánto cuesta el plan promedio de cada marca?</li>
+                <li><strong>Velocidad promedio:</strong> ¿Qué tan rápida es la conexión promedio por marca?</li>
+                <li><strong>Extras ofrecidos:</strong> Beneficios adicionales, como bonos, canales y más.</li>
             </ul>
             <p>Al comparar las marcas, podemos identificar cuál ofrece el mejor servicio según las necesidades de los usuarios en Lima Metropolitana, ayudando a tomar decisiones más informadas sobre la contratación de internet.</p>
         </div>
 
         <div class="marca-derecha">
-            <img src="../imagenes/marcas2.png" alt="Marca 2">
+            <img src="../imagenes/marcas2.png" alt="Marca 2" />
         </div>
     </section>
 
-    <!-- Sección de búsqueda (centrada) -->
+    <!-- Sección de búsqueda -->
     <section id="comparacion">
         <div class="container" style="text-align: center; margin-top: 30px;">
             <h2>Selecciona tu Distrito</h2>
             <div class="busqueda" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
                 <select id="distritoSelect">
                     <option value="" disabled selected>Seleccionar Distrito...</option>
-                    <!-- Aquí deberías cargar los distritos dinámicamente -->
                 </select>
                 <button id="searchBtn" onclick="buscarDistrito()" class="boton-buscar">
-                    <i class="fa fa-search"></i> <!-- Icono de lupa -->
+                    <i class="fa fa-search"></i>
                 </button>
             </div>
         </div>
     </section>
 
-<!-- Botón para ver el Mapa Interactivo de Pobreza -->
-<section id="mapa">
-    <div class="container" style="text-align: center; margin-top: 30px;">
-        <button onclick="window.open('mapa/mapa.html', '_blank')" class="boton-dashboard">
-            🗺️ Ver Mapa Interactivo de Pobreza por Distrito
-        </button>
-    </div>
-</section>
-
-<!-- Botón de "Ver Planes en Lima Metropolitana" -->
-<section id="dashboard">
-    <div class="container" style="text-align: center; margin-top: 30px;">
-        <a href="script_pagina/estadisticas.html">
-            <button class="boton-dashboard boton-dashboard-estadisticas">
-                📊 Ver Planes en Lima Metropolitana
+    <!-- Botón: Ver Mapa Interactivo -->
+    <section id="mapa">
+        <div class="container" style="text-align: center; margin-top: 30px;">
+            <button onclick="window.open('mapa/mapa.html', '_blank')" class="boton-dashboard">
+                🗺️ Ver Mapa Interactivo de Pobreza por Distrito
             </button>
-        </a>
-    </div>
-</section>
-
-<!-- Botón de "Ver Dashboard" -->
-<section id="dashboard2">
-    <div class="container" style="text-align: center; margin-top: 30px;">
-        <a href="script_pagina/estadisticas2.html">
-            <button class="boton-dashboard boton-dashboard-ver">
-                📊 Ver Dashboard
-            </button>
-        </a>
-    </div>
-</section>
-                </button>
-            </a>
         </div>
     </section>
 
-    <!-- Botón de "Ver Planes en Lima Metropolitana" con emoji -->
-    <section id="dashboard" style="text-align: center; margin-top: 30px;">
-        <div class="container">
+    <!-- Botón: Ver Planes en Lima Metropolitana -->
+    <section id="planes-lima">
+        <div class="container" style="text-align: center; margin-top: 30px;">
             <a href="script_pagina/estadisticas.html">
-                <button class="boton-dashboard boton-dashboard-estadisticas">
-                    📊 Ver Estadísticas Avanzadas
+                <button class="boton-dashboard">
+                    📊 Ver Planes en Lima Metropolitana
                 </button>
             </a>
         </div>
     </section>
 
-    <!-- Pie de página con nombres de los integrantes -->
+    <!-- Botón: Ver Dashboard -->
+    <section id="dashboard">
+        <div class="container" style="text-align: center; margin-top: 30px;">
+            <a href="script_pagina/estadisticas2.html">
+                <button class="boton-dashboard">
+                    📊 Ver Dashboard
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
     <footer>
         <div class="container">
             <p>Integrantes: Kamila Nicoll Saavedra Acuña, Fabiana Rojas Taco, Arturo Ramirez Caro</p>
         </div>
     </footer>
 
-    <!-- Referencia al archivo JavaScript -->
-    <script src="script_pagina/EstScript.js"></script>  <!-- Aquí se vincula EstScript.js -->
-    <script src="script_pagina/script.js"></script>  <!-- Este es el archivo que contiene el código para cargar los distritos -->
+    <!-- Scripts -->
+    <script src="script_pagina/EstScript.js"></script>
+    <script src="script_pagina/script.js"></script>
 </body>
 
 </html>
+
