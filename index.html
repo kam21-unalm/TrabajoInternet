@@ -68,19 +68,24 @@
         </div>
     </section>
 
-    <!-- Sección de búsqueda (centrada) -->
-    <section id="comparacion">
+
+    <!-- Botón para ver el Mapa Interactivo de Pobreza -->
+    <section id="mapa">
         <div class="container" style="text-align: center; margin-top: 30px;">
-            <h2>Selecciona tu Distrito</h2>
-            <div class="busqueda" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-                <select id="distritoSelect">
-                    <option value="" disabled selected>Seleccionar Distrito...</option>
-                    <!-- Aquí deberías cargar los distritos dinámicamente -->
-                </select>
-                <button id="searchBtn" onclick="buscarDistrito()" class="boton-buscar">
-                    <i class="fa fa-search"></i> <!-- Icono de lupa -->
+            <button onclick="window.open('mapa/mapa.html', '_blank')" class="boton-dashboard">
+                🗺️ Ver Mapa Interactivo de Pobreza por Distrito
+            </button>
+        </div>
+    </section>
+
+    <!-- Botón de "Ver Planes en Lima Metropolitana" con emoji -->
+    <section id="dashboard">
+        <div class="container" style="text-align: center; margin-top: 30px;">
+            <a href="script_pagina/estadisticas.html">
+                <button class="boton-dashboard">
+                    📊 Ver Planes en Lima Metropolitana
                 </button>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -88,23 +93,23 @@
     <section id="dashboard" style="text-align: center; margin-top: 30px;">
         <div class="container">
             <a href="script_pagina/estadisticas2.html">
-                <button class="boton-dashboard boton-dashboard-ver">
+                <button class="boton-dashboard boton-dashboard-estadisticas">
                     📊 Ver Dashboard
                 </button>
             </a>
         </div>
     </section>
 
-    <!-- Botón de "Ver Planes en Lima Metropolitana" con emoji -->
-    <section id="dashboard" style="text-align: center; margin-top: 30px;">
-        <div class="container">
-            <a href="script_pagina/estadisticas.html">
-                <button class="boton-dashboard boton-dashboard-estadisticas">
-                    📊 Ver Estadísticas Avanzadas
-                </button>
-            </a>
-        </div>
-    </section>
+    <!-- Botón de "NEW API" con emoji -->
+    <section id="newApi" style="text-align: center; margin-top: 30px;">
+     <div class="container">
+         <a href="script_pagina/noticias.html">
+            <button class="boton-dashboard">
+                🚀 NEW API
+            </button>
+          </a>
+       </div>
+   </section>
 
     <!-- Pie de página con nombres de los integrantes -->
     <footer>
