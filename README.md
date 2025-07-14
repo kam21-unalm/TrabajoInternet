@@ -83,6 +83,11 @@ TrabajoInternet/
 - **Fabiana Rojas** – [Fabiana1809](https://github.com/Fabiana1809)
 - **Kamila Saavedra** – [kam21-unalm](https://github.com/kam21-unalm)
 - **Arturo Ramirez** – [arturoramirezcaro](https://github.com/arturoramirezcaro)
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 3452d138a28101b508acdf7a788d1f47739d5937
 
 
 
